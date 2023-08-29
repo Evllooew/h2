@@ -5,6 +5,11 @@ public class Slytherin extends Hogwarts  {
     private int determination;
     private int ambition;
     private int  resourcefulness;
+    private int sumFeatures() {
+
+        return this.cunning + this.determination + this.ambition + this.resourcefulness;
+
+    }
 
 
     public Slytherin(String name, int power, int transpiration, int cunning, int determination, int ambition, int resourcefulness) {
@@ -16,9 +21,9 @@ public class Slytherin extends Hogwarts  {
     }
 
     public void compare (Slytherin slytherin){
-        if (cunning + determination + ambition + resourcefulness>  slytherin.getCunning() + slytherin.getDetermination() + slytherin.getAmbition() + slytherin.getResourcefulness()){
-            System.out.println(name + " сильнее " + slytherin.getName());
-        } else { System.out.println( slytherin.getName() + " сильнее " + name);
+        if (this.sumFeatures() > slytherin.sumFeatures()){
+            System.out.println(getName() + " сильнее " + slytherin.getName());
+        } else { System.out.println( slytherin.getName() + " сильнее " + getName());
         }
 
     }
@@ -39,5 +44,13 @@ public class Slytherin extends Hogwarts  {
         return resourcefulness;
     }
 
-
+    @Override
+    public String toString() {
+        return "Slytherin{" + ", " + super.toString() +
+                "cunning=" + cunning +
+                ", determination=" + determination +
+                ", ambition=" + ambition +
+                ", resourcefulness=" + resourcefulness +
+                '}';
+    }
 }

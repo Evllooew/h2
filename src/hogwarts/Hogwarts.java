@@ -3,7 +3,7 @@ package hogwarts;
 import java.util.Random;
 
 public abstract class Hogwarts {
-    protected String name;
+    private String name;
     private int power;
     private int transpiration;
 

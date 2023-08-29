@@ -5,7 +5,11 @@ public class Ravenclaw extends Hogwarts {
     private int wisdom;
     private int wit;
     private int creativity;
+    private int sumFeatures() {
 
+        return this.intelligence + this.wisdom + this.wit + this.creativity;
+
+    }
     public Ravenclaw(String name, int power, int transpiration, int intelligence, int wisdom, int wit, int creativity) {
         super(name, power, transpiration);
         this.intelligence = intelligence;
@@ -15,10 +19,10 @@ public class Ravenclaw extends Hogwarts {
     }
 
     public void compare(Ravenclaw ravenclaw) {
-        if (intelligence + wisdom + wit + creativity > ravenclaw.getIntelligence() + ravenclaw.getWisdom() + ravenclaw.getWit() + ravenclaw.getCreativity()) {
-            System.out.println(name + " сильнее " + ravenclaw.getName());
+        if (this.sumFeatures() > ravenclaw.sumFeatures()) {
+            System.out.println(getName() + " сильнее " + ravenclaw.getName());
         } else {
-            System.out.println(ravenclaw.getName() + " сильнее " + name);
+            System.out.println(ravenclaw.getName() + " сильнее " + getName());
         }
 
     }
@@ -39,5 +43,13 @@ public class Ravenclaw extends Hogwarts {
         return creativity;
     }
 
-
+    @Override
+    public String toString() {
+        return "Ravenclaw{" +
+                "intelligence=" + ", " + super.toString() + intelligence +
+                ", wisdom=" + wisdom +
+                ", wit=" + wit +
+                ", creativity=" + creativity +
+                '}';
+    }
 }
